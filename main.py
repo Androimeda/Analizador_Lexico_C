@@ -25,7 +25,7 @@ NOMBRE = 2
 tokens=[]
 nombre_tokens = []
 # print(lineas)
-c=1
+c=1 # Contador de línea para deteccion de errores
 cancela_analisis=False
 for linea in lineas:
 	linea = linea.replace("\t", "") # Se eliminan tabulaciones
@@ -60,11 +60,12 @@ for linea in lineas:
 				#	automata inconcluso, error de sintaxis
 			
 			if alcanza_fin_linea:
-				c+=1 
+				c+=1 # Aumenta en uno el contador de línea
 				break # Sale del while
 
 	if cancela_analisis:
 		break # Sale del for
+	
 	if "//" in linea:
 		c+=1
 	
