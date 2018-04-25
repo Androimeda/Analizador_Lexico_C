@@ -1,0 +1,18 @@
+-- GFC--
+declaracion -->  tipo var (=expresion)? (',' var (=expresion)?)* ';'
+tipo--> ('INT'|'FLOAT'|'DOUBLE'|'SHORT'|'BIGINT'|'NUMBER')
+var --> letra (letra|'-'|digito)*
+letra--> [a-zA-Z]
+digito--> [0-9]
+asignacion--> var '=' expresion
+ciclo--> cabecera_ciclo '{' cuerpo '}'
+cuerpo --> (declaracion|asignacion|ciclo)
+expresion --> expresion '+' termino | expr '-' termino| termino
+termino--> termino '*' factor| termino '/' factor| factor
+factor-->'('expresion ')' |var |numero
+numero --> (entero|float)
+entero --> digito digito *
+float--> (entero exponente| decimal(exponente|ε))
+decimal --> digito(.digito|digito.) digito*
+bloque--> (INT|VOID) 'main (VOID) ' '{' Cuerpo '}'
+cabecera_ciclo --> 'FOR''('(asignacion|declaracion)';' exp.bool ';'var ('++'|'--')'}'
