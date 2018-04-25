@@ -1,7 +1,8 @@
 #### Importacion de archivos
-import re
-from reglas import *
-from estados import *
+import re # Modulo para trabajar con REGEX
+# MODULOS PROPIOS
+from reglas import * 
+from estados import * # OPCIONAL
 from automata import *
 
 #### Carga de archivo a examinar
