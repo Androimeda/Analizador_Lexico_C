@@ -9,7 +9,7 @@ tipo--> ('INT'|'FLOAT'|'DOUBLE'|'SHORT'|'BIGINT'|'NUMBER')
 expresion --> expresion '+' termino | expr '-' termino| termino
 termino--> termino '*' factor| termino '/' factor| factor
 factor-->'('expresion ')' |var |numero
-var --> letra (letra|'-'|digito)*
+var --> letra (letra|'_'|digito)*
 numero --> (entero|float)
 entero --> digito digito *
 float--> (entero exponente| decimal(exponente|ε))
